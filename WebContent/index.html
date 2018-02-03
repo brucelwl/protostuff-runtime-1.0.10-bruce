@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Web Socket JavaScript Echo Client</title>
+        <script type="text/javascript">
+            var echo_websocket;
+            
+            function init() {
+                output = document.getElementById("output");
+                init_echo();
+            }
+
+            function init_echo() {
+                //var wsUri = "ws://localhost:8081/WebSocket1/echo";
+                var wsUri = "ws://localhost:8081/protostuff.runtime/test";
+                writeToScreen("Connecting to " + wsUri);
+                echo_websocket = new WebSocket(wsUri);
+                echo_websocket.onopen = function (evt) {
+                    writeToScreen("Connected !");
+                    doSend(textID.value);
+                };
+                echo_websocket.onmessage = function (evt) {
+                    writeToScreen("Received message: " + evt.data);
+                    //echo_websocket.close();
+                    //接收到服务端的信息后,不需要关闭
+                };
+                echo_websocket.onerror = function (evt) {
+                    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+                    echo_websocket.close();
+                }; 
+            }
+            
+            //关闭与服务器的连接
+            function closeWebsocket(){
+            	echo_websocket.close();
+            	alert("已经断开与服务器的连接");
+            }
+
+            //发送数据
+            function doSend(message) {
+            	if(echo_websocket.readyState == echo_websocket.OPEN){
+            		 echo_websocket.send(message);
+            		 writeToScreen("Sent message: " + message);
+            	}else{
+            		alert("已经断开与服务器的连接");
+            	}
+            }
+            //在屏幕中显示数据
+            function writeToScreen(message) {
+                var pre = document.createElement("p");
+                pre.style.wordWrap = "break-word";
+                pre.innerHTML = message;
+                output.appendChild(pre);
+            }
+            
+            window.addEventListener("load", init, false);
+            
+        </script>
+    </head>
+    <body>
+        <h1>Echo Server</h1>
+        
+        <div style="text-align: left;">
+            <form action="">
+                <input onclick="doSend('hahaha')" value="Press to send" type="button">
+                <input id="textID" name="message" value="Hello Web Sockets" type="text">
+                <input type="button" onclick="closeWebsocket()" value="close webSocket">
+            </form>
+        </div>
+        <div id="output"></div>
+    </body>
+</html>
