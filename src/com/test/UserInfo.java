@@ -1,4 +1,4 @@
-package com.lwl;
+package com.test;
 
 public class UserInfo {
 	

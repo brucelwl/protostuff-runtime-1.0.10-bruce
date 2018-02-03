@@ -1,4 +1,4 @@
-package com.lwl;
+package com.test;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ public class ProtostuffTest {
 	
 	private void test(){
 		
-		UserInfo userInfo = new UserInfo(15, "李文龙", "男");
+		UserInfo userInfo = new UserInfo(15, "李逍遥", "男");
 		
 		byte[] byteArray = ProtostuffIOUtil.toByteArray(userInfo, userInfoSchema,
 				LinkedBuffer.allocate(LinkedBuffer.DEFAULT_BUFFER_SIZE));
@@ -36,28 +36,5 @@ public class ProtostuffTest {
 		
 	}
 	
-	private void order() {
-		ArrayList<String> data = new ArrayList<String>();
-				
-		data.add("ab");
-		data.add("cc");
-		data.add("bb");
-		data.add("GG");
-		data.add("EE");
-		
-		/*data.sort(new Comparator<String>() {
-			@Override
-			public int compare(String o1, String o2) {
-				return 0;
-			}
-		});*/
-		
-		Collections.sort(data);
-
-		System.out.println(data);
-	}
 	
-	
-	
-
 }
