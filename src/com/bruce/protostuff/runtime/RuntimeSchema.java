@@ -307,11 +307,11 @@ public final class RuntimeSchema<T> extends MappedSchema<T>
     
     static void fill(Map<String,java.lang.reflect.Field> fieldMap, Class<?> typeClass)
     {
-    	Map<String, java.lang.reflect.Field> sortMap = new TreeMap<String, java.lang.reflect.Field>(new MapKeyComparator());
-    	
         if(Object.class!=typeClass.getSuperclass())
             fill(fieldMap, typeClass.getSuperclass());
         
+		Map<String, java.lang.reflect.Field> sortMap = new TreeMap<String, java.lang.reflect.Field>(new MapKeyComparator());
+		
         for(java.lang.reflect.Field f : typeClass.getDeclaredFields())
         {
             int mod = f.getModifiers();
