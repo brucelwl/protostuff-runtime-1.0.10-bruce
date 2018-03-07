@@ -1,0 +1,4 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Wed Mar 07 22:19:01 CST 2018
+http\://maven.aliyun.com/nexus/content/repositories/jcenter/.error=Could not transfer artifact com.dyuproject.protostuff\:protostuff-core\:jar\:1.1.3 from/to alimaven (http\://maven.aliyun.com/nexus/content/repositories/jcenter)\: D\:\\WebCommUtil\\apache-maven-3.3.9\\repo\\com\\dyuproject\\protostuff\\protostuff-core\\1.1.3\\aether-44b4481c-e1a0-4230-92fe-4d6a27313bf0-protostuff-core-1.1.3.jar-in-progress (\u7CFB\u7EDF\u627E\u4E0D\u5230\u6307\u5B9A\u7684\u6587\u4EF6\u3002)
+@default-alimaven-http\://maven.aliyun.com/nexus/content/repositories/jcenter/.lastUpdated=1520432341003
