@@ -21,6 +21,7 @@ Protobuf是Google开源的高效,跨平台的序列化工具,而protostuff是一
 		</repository>
 	</repositories>
 	
+	
 * maven 依赖设置dependencies
 
 
