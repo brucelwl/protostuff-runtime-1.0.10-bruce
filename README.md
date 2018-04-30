@@ -7,7 +7,7 @@ Protobuf是Google开源的高效,跨平台的序列化工具,而protostuff是一
 导致服务器序列化的流传输到Android后反序列化数据异常。
 所以需改protostuff-runtime中的代码使得字段顺序一致,基本思路就是对反射得到的字段属性进行排序
 修改代码部分:RuntimeSchema类中的fill方法
-* maven 依赖在maven_dependency文件夹下
+* maven 依赖设置repositories
 
 
     <repositories>
@@ -21,6 +21,9 @@ Protobuf是Google开源的高效,跨平台的序列化工具,而protostuff是一
 		</repository>
 	</repositories>
 	
+* maven 依赖设置dependencies
+
+
 	<dependencies>
         <dependency>
             <groupId>com.bruce.protostuff</groupId>
