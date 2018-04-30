@@ -9,9 +9,22 @@ Protobuf是Google开源的高效,跨平台的序列化工具,而protostuff是一
 修改代码部分:RuntimeSchema类中的fill方法
 * maven 依赖在maven_dependency文件夹下
 
-      <dependency>
-          <groupId>com.dyuproject.protostuff</groupId>
-          <artifactId>protostuff-runtime-bruce</artifactId>
-          <version>1.1.3</version>
-      </dependency>  
 
+    <repositories>
+		<repository>
+			<id>bruce-lwl</id>
+			<url>https://raw.github.com/brucelwl/maven-repo/master/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<dependencies>
+        <dependency>
+            <groupId>com.bruce.protostuff</groupId>
+            <artifactId>protostuff-runtime-bruce</artifactId>
+            <version>1.1.3</version>
+        </dependency>  
+    </dependencies>
