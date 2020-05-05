@@ -4,7 +4,7 @@ Protobuf是Google开源的高效,跨平台的序列化工具,而protostuff是一
 修改代码部分:RuntimeSchema类中的fill方法
 
 
-###maven 依赖设置repositories
+### maven 依赖设置repositories
 
 
     <repositories>
@@ -19,7 +19,7 @@ Protobuf是Google开源的高效,跨平台的序列化工具,而protostuff是一
 	</repositories>
 
 
-###maven 依赖设置dependencies
+### maven 依赖设置dependencies
 
 
 	<dependencies>
